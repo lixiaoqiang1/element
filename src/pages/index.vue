@@ -1,4 +1,22 @@
 <style>
+ul,li{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+.Menu{
+    width: 120px;  
+}
+.liMenu{
+  cursor:pointer;
+}
+.liMenu.active{
+  color:red;
+}
+.nav_ter{
+    width: 120px;
+}
+
   .transition-box {
     margin-bottom: 10px;
     width: 200px;
@@ -31,10 +49,33 @@
 </style>
 <template>
     <div>
+        <div>
+            {{aaa}}
+            <el-button @click="aaa+=2">btn+</el-button>
+            <el-button @click="aaa-=1">btn-</el-button>
+            <el-button @click="bbb('Form cannot be submitted yet.', $event)">btn2</el-button>
+        </div>
+        <hr>
+        <label><input type="checkbox" id="aaa" value="aaa" v-model="che_active">aaa</label>
+        <label><input type="checkbox" id="bbb" value="bbb" v-model="che_active">bbb</label>
+        <label><input type="checkbox" id="ccc" value="ccc" v-model="che_active">ccc</label>
+        {{che_active}}
+        <hr>
+        <label><input type="radio" id="aaa" value="aaa" v-model="radio_active">aaa</label>
+        <label><input type="radio" id="bbb" value="bbb" v-model="radio_active">bbb</label>
+        <label><input type="radio" id="ccc" value="ccc" v-model="radio_active">ccc</label>
+        {{radio_active}}
+        <hr>
+        {{selected}}
+        <select v-model="selected">
+            <option v-for="op1 in op2">{{op1.aa}}</option>
+        </select>
+        <hr>
+        
         <el-row type="flex" justify="center">
             <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
                 <el-form-item label="用户名" prop="name">
-                    <el-input v-model="user.name"></el-input>
+                    <el-input v-model="user.name" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="pass">
                     <el-input v-model="user.pass" type="password"></el-input>
@@ -44,6 +85,7 @@
                 </el-form-item>
             </el-form>
         </el-row>
+         <hr>
         <el-dropdown @command="handleCommand">
             <span class="el-dropdown-link">
                 下拉菜单<i class="el-icon-arrow-down el-icon--right"></i>
@@ -56,11 +98,13 @@
                 <el-dropdown-item divided>蚵仔煎</el-dropdown-item>
             </el-dropdown-menu>
         </el-dropdown>
+         <hr>
         <ul class="Menu">
             <li class="liMenu" 
             :class="idx==index?'active':''" @click="btn(item,idx)" v-for="(item,idx) in items" 
             :key="idx">{{item}}</li>
         </ul>
+         <hr>
         <div class="nav_ter">
             <p class="nav" v-for="(operate,path,index) in navTo.operate" @click="change(operate,path)" :key="index">
                 <router-link :to="{ path: operate.path }">
@@ -68,8 +112,10 @@
                 </router-link>
             </p>
         </div>
+         <hr>
         <div v-if="sucess1 === '11'">登录成功时候显示1111</div>
         <div v-else>登录失败时候显示2222</div>
+         <hr>
         <div>
             <ul>
                 <li @click="mechanisms(100)">
@@ -87,15 +133,16 @@
                 </li>
             </ul>
         </div>
+         <hr>
         <div>
             <ul style="border:1px #ddd solid;">
-                <li v-for="(item,index) in ita" :key="index" @click="btn11(index,$event)">
+                <li v-for="(item,index) in ita" :key="item.id" @click="btn11(index,$event)">
                     <h5>{{item.aa1}}</h5>
                     <p>{{item.aa2}}</p>
                 </li>
             </ul>
         </div>
-        
+         <hr>
     </div>
 </template>
 <script>
@@ -103,6 +150,13 @@
 export default {
     data(){
         return{
+            aaa:1,
+            che_active:[],
+            radio_active:[],
+            op2:[
+                {'aa':'aa1'},{'aa':'aa2'},{'aa':'aa3'}
+            ],
+            selected:'aa1',
             user: {},
             rules: {
                 name: [
@@ -122,36 +176,39 @@ export default {
         	   ]
         	},
             ita:[
-                {'aa1':'aaa1','aa2':'bbb1'},
-                {'aa1':'aaa2','aa2':'bbb2'},
-                {'aa1':'aaa3','aa2':'bbb3'},
+                {'id':11,'aa1':'aaa1','aa2':'bbb1'},
+                {'id':22,'aa1':'aaa2','aa2':'bbb2'},
+                {'id':33,'aa1':'aaa3','aa2':'bbb3'},
             ]
         }
     },
     methods:{
+        bbb(a){
+            alert(a)
+        },
         login () {
-                this.$refs.loginForm.validate((valid) => {
-                    if (valid) {
-                        if (this.user.name === 'admin' && this.user.pass === '123') {
-                            this.$notify({
-                                type: 'success',
-                                message: '欢迎你,' + this.user.name + '!',
-                                duration: 3000 
-                            })
-                            this.$router.replace('/')
-                        } else {
-                            this.$message({
-                                type: 'error',
-                                message: '用户名或密码错误',
-                                showClose: true
-                            })
-                        }
+            this.$refs.loginForm.validate((valid) => {
+                if (valid) {
+                    if (this.user.name === 'admin' && this.user.pass === '123') {
+                        this.$notify({
+                            type: 'success',
+                            message: '欢迎你,' + this.user.name + '!',
+                            duration: 3000 
+                        })
+                        this.$router.replace('/table1')
+                    } else {
+                        this.$message({
+                            type: 'error',
+                            message: '用户名或密码错误',
+                            showClose: true
+                        })
                     }
-                    else {
-                        return false
-                    }
-                })
-            },
+                }
+                else {
+                    return false
+                }
+            })
+        },
         btn(item,idx){
             console.log(item);
             console.log(idx +'选中');
@@ -166,8 +223,7 @@ export default {
         },
         btn11(index,$event){
             var a = $event.currentTarget
-            console.log(a 
-             )
+            console.log(a)
         },
         handleCommand(command) {
             this.$message('click on item ' + command);
@@ -183,24 +239,4 @@ export default {
     }
 }
 </script>
-
-<style>
-ul,li{
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-.Menu{
-    width: 120px;  
-}
-.liMenu{
-  cursor:pointer;
-}
-.liMenu.active{
-  color:red;
-}
-.nav_ter{
-    width: 120px;
-}
-</style>
 
