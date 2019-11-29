@@ -46,6 +46,13 @@ ul,li{
   .el-input{
       margin-bottom: 20px
   }
+
+  .fade-enter-active, .fade-leave-active {
+  transition: opacity .5s
+    }
+    .fade-enter, .fade-leave-active {
+    opacity: 0
+    }
 </style>
 <template>
     <div>
@@ -71,7 +78,15 @@ ul,li{
             <option v-for="op1 in op2">{{op1.aa}}</option>
         </select>
         <hr>
-        
+        <transition name="fade">
+            <div v-if="show">显示还是隐藏</div>
+        </transition>
+       
+        <el-button @click="show=!show">show</el-button>
+        <hr>
+        <button v-bind:key="isEditing">
+    {{ isEditing ? 'Save' : 'Edit' }}
+  </button>
         <el-row type="flex" justify="center">
             <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
                 <el-form-item label="用户名" prop="name">
@@ -153,6 +168,7 @@ export default {
             aaa:1,
             che_active:[],
             radio_active:[],
+            show:false,
             op2:[
                 {'aa':'aa1'},{'aa':'aa2'},{'aa':'aa3'}
             ],
