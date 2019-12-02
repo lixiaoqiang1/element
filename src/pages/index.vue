@@ -53,10 +53,12 @@ ul,li{
     .fade-enter, .fade-leave-active {
     opacity: 0
     }
+  
 </style>
 <template>
     <div>
         <div>
+            <el-button @click="maodian">锚点</el-button>
             {{aaa}}
             <el-button @click="aaa+=2">btn+</el-button>
             <el-button @click="aaa-=1">btn-</el-button>
@@ -83,10 +85,6 @@ ul,li{
         </transition>
        
         <el-button @click="show=!show">show</el-button>
-        <hr>
-        <button v-bind:key="isEditing">
-    {{ isEditing ? 'Save' : 'Edit' }}
-  </button>
         <el-row type="flex" justify="center">
             <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
                 <el-form-item label="用户名" prop="name">
@@ -244,6 +242,10 @@ export default {
         handleCommand(command) {
             this.$message('click on item ' + command);
             console.log(command)
+        },
+        maodian(){
+            let aaa = 200
+            window.scrollTo(50000,aaa);
         }
     },
     mounted(){

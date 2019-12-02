@@ -4,7 +4,9 @@
       <el-row class="tac">
         <el-col>
           <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  @select="handleSelect">
-            <el-menu-item index="index"><span slot="title">首页11</span></el-menu-item>
+            <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
+            <el-menu-item index="isprops"><span slot="title">props父向子传值1</span></el-menu-item>
+            <el-menu-item index="isprops2"><span slot="title">props子向父传值2</span></el-menu-item>
             <el-submenu index="1">
               <template slot="title"><span>统计模块</span></template>
               <el-menu-item-group>

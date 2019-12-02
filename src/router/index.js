@@ -2,6 +2,8 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import index from '@/pages/index'
+import isprops from '@/pages/isprops'
+import isprops2 from '@/pages/isprops2'
 import table1 from '@/pages/table1'
 import table2 from '@/pages/table2'
 import table3 from '@/pages/table3'
@@ -20,6 +22,7 @@ import Error from '@/components/Error'
 Vue.use(Router)
 
 export default new Router({
+  mode: 'history',
   routes: [
     {
       path: '/',
@@ -27,6 +30,8 @@ export default new Router({
       component: HelloWorld,
       children:[
         {path: '/index',name: 'index',component: index},
+        {path: '/isprops',name: 'isprops',component: isprops},
+        {path: '/isprops2',name: 'isprops2',component: isprops2},
         {path: '/table1',name: 'table1',component: table1},
         {path: '/table2',name: 'table2',component: table2},
         {path: '/table3',name: 'table3',component: table3},
@@ -41,7 +46,7 @@ export default new Router({
         {path: '/anli1',name: 'anli1',component: anli1},
         {path: '/countpage',name: 'countpage',component: countpage},
         {path: '/countpage2',name: 'countpage2',component: countpage2},
-        {path: '*',name: 'Error', component: Error,}//页面错误时
+        {path: '*',name: 'Error', component: Error,}
       ]
     }
   ]
