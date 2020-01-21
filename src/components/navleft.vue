@@ -5,6 +5,7 @@
         <el-col>
           <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  @select="handleSelect">
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
+            <el-menu-item index="daohang"><span slot="title">验证码</span></el-menu-item>
             <el-menu-item index="isprops"><span slot="title">props父向子传值1</span></el-menu-item>
             <el-menu-item index="isprops2"><span slot="title">props子向父传值2</span></el-menu-item>
             <el-submenu index="1">

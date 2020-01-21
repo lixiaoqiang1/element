@@ -1,34 +1,52 @@
+
 <template>
-    <div>
-        <el-pagination
-            @size-change="handleSizeChange"
+    <div class="pagenation">
+        <el-pagination small  class="text-center" 
+            @size-change="handleSizeChange" 
             @current-change="handleCurrentChange"
-            :current-page="currentPage"
-            :page-sizes="[5, 10, 20, 40]" 
-            :page-size="pagesize"         
-            layout="total, sizes, prev, pager, next, jumper"
-            :total="total">   
+            :current-page="page.page_index" 
+            :page-sizes="pageSizes" 
+            :page-size="page.limit"
+            layout="total, sizes, prev, pager, next, jumper" 
+            :total="total">
         </el-pagination>
     </div>
 </template>
 
 <script>
 export default {
-methods: {
-    // 初始页currentPage、初始每页数据数pagesize和数据data
-    handleSizeChange: function (size) {
-            this.pagesize = size;
-            console.log(this.pagesize)  //每页下拉显示数据
+  props: {
+    total: {
+      type: Number
+    } // 总条数
+  },
+  data() {
+    return {
+      pageSizes: [5, 10, 20, 50, 100],
+      page: {
+        page_index: 1,
+        page_limit: 10
+      }
+    };
+  },
+  methods: {
+    // // 每页查看条数变化
+    handleSizeChange(val) {
+      this.page.page_limit= val;
+      this.$emit('pageChange', this.page);
     },
-    handleCurrentChange: function(currentPage){
-            this.currentPage = currentPage;
-            console.log(this.currentPage)  //点击第几页
-    }
-},
+    // 当前页码变化
+    handleCurrentChange(val) {
+      this.page.page_index= val;
+      this.$emit('pageChange', this.page);
+    },
+  },
+
 }
 </script>
 
-<style>
-
+<style scoped>
+  .pagenation{
+    margin: 20px 0;
+  }
 </style>
-

@@ -245,11 +245,11 @@ export default {
         },
         maodian(){
             let aaa = 200
-            window.scrollTo(50000,aaa);
+            window.scrollTo(50000,aaa);               
         }
     },
     mounted(){
-        this.axios.get('/api/data11').then((res)=>{
+        this.axios.get('/api/riqi3').then((res)=>{
             console.log(res)
         }).catch((err)=>{
             console.log(err);
