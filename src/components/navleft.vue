@@ -1,3 +1,8 @@
+<style scoped>
+.tac{
+  width: 200px;
+}
+</style>
 <template>
     <div>
       <!-- 左侧导航开始 -->
@@ -5,6 +10,7 @@
         <el-col>
           <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  @select="handleSelect">
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
+            <el-menu-item index="daohang1"><span slot="title">导航</span></el-menu-item>
             <el-menu-item index="daohang"><span slot="title">验证码</span></el-menu-item>
             <el-menu-item index="isprops"><span slot="title">props父向子传值1</span></el-menu-item>
             <el-menu-item index="isprops2"><span slot="title">props子向父传值2</span></el-menu-item>
@@ -31,6 +37,8 @@
               <el-menu-item-group>
                 <el-menu-item index="diancan">点餐_axios</el-menu-item>
                 <el-menu-item index="anli1">anli</el-menu-item>
+                <el-menu-item index="yingpin">音频</el-menu-item>
+                <el-menu-item index="yingpin1">音频1</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="4">

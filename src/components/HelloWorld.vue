@@ -18,7 +18,7 @@
   min-width: 150px
 }
 #isbody{
-  padding-left: 150px;
+  padding-left: 200px;
   padding-top: 60px;
 }
 .navtop{
