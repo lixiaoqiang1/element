@@ -12,7 +12,7 @@
         placeholder="请输入姓名"
         v-model="userData.name"/>
       <el-input
-        placeholder="请输入姓名"
+        placeholder="请输入年齡"
         v-model="userData.age"/>
     </div>
   </div>

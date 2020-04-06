@@ -10,7 +10,7 @@
         placeholder="请输入姓名"
         v-model="name"/>
       <el-input
-        placeholder="请输入姓名"
+        placeholder="请输入年齡"
         v-model="age"/>
     </div>
     <el-button @click="tijiao">提交</el-button>
