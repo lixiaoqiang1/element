@@ -5,17 +5,15 @@
 </style>
 <template>
   <div>
-    <div class="demo">
+    <h4>{{count}}</h4>
+    <h5>{{isbtn1}}</h5>
+     <div class="demo">
       <el-input
         placeholder="请输入姓名"
-        v-model="name"/>
+        v-model="userData.name"/>
       <el-input
         placeholder="请输入姓名"
-        v-model="age"/>
-    </div>
-    <el-button @click="tijiao">提交</el-button>
-    <div>
-      {{userData.name}}
+        v-model="userData.age"/>
     </div>
   </div>
 </template>
@@ -26,23 +24,19 @@
   export default {
     data () {
       return {
-       name:'',
+        name:'',
         age:'',
-      }
+      };
     },
     methods: {
-       tijiao(){
-         let json1 = {
-           name:this.name,
-           age:this.age
-          }
-        this.$store.commit('setValue',json1) 
-       }
+
     },
-    
     computed:{
-      ...mapState(['userData']),
-      
+      ...mapState(['count','userData','isbtn1']),
+      count(){
+        //count输出的两种写法都可以
+       return this.$store.getters.count
+      }
     },
     store
   };

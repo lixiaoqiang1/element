@@ -17,10 +17,10 @@ import diancan from '@/pages/diancan'
 import anli1 from '@/pages/anli1'
 import kehumy from '@/pages/kehumy'
 import kehuyou from '@/pages/kehuyou'
-import countpage from '@/pages/countpage'
+import vuex1 from '@/pages/vuex1'
+import vuex3 from '@/pages/vuex3'
 import countpage2 from '@/pages/countpage2'
-import countpage3 from '@/pages/countpage3'
-import countpage4 from '@/pages/countpage4'
+import vuex4 from '@/pages/vuex4'
 import Error from '@/components/Error'
 Vue.use(Router)
 
@@ -48,10 +48,10 @@ export default new Router({
         {path: '/upload2',name: 'upload2',component: upload2},
         {path: '/diancan',name: 'diancan',component: diancan},
         {path: '/anli1',name: 'anli1',component: anli1},
-        {path: '/countpage',name: 'countpage',component: countpage},
+        {path: '/vuex1',name: 'vuex1',component: vuex1},
+        {path: '/vuex3',name: 'vuex3',component: vuex3},
+        {path: '/vuex4',name: 'vuex4',component: vuex4},
         {path: '/countpage2',name: 'countpage2',component: countpage2},
-        {path: '/countpage3',name: 'countpage3',component: countpage3},
-        {path: '/countpage4',name: 'countpage4',component: countpage4},
         {path: '*',name: 'Error', component: Error,}
       ]
     }

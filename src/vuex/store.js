@@ -4,12 +4,10 @@ Vue.use(Vuex);
 
 const state={
     count:5,
-    counts:{
-        a1:221,
-        a2:'張三'
+    userData: {
+        name:'姓名',
+        age:'年龄'
     },
-    name1:'我是李晓强',
-    userData: {}
 }
 const mutations={
     add(state,n){
@@ -18,12 +16,10 @@ const mutations={
     reduce(state){
         state.count--;
     },
-    btn1(state){
-        console.log(state.name1)
-    },
     setValue(state,e){
         console.log(e)
         state.userData = e;
+        
     }
 }
 const getters={
