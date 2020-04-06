@@ -3,7 +3,6 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import index from '@/pages/index'
 import daohang from '@/pages/daohang'
-import daohang1 from '@/pages/daohang1'
 import isprops from '@/pages/isprops'
 import isprops2 from '@/pages/isprops2'
 import table1 from '@/pages/table1'
@@ -20,8 +19,8 @@ import kehumy from '@/pages/kehumy'
 import kehuyou from '@/pages/kehuyou'
 import countpage from '@/pages/countpage'
 import countpage2 from '@/pages/countpage2'
-import yingpin from '@/pages/yingpin'
-import yingpin1 from '@/pages/yingpin1'
+import countpage3 from '@/pages/countpage3'
+import countpage4 from '@/pages/countpage4'
 import Error from '@/components/Error'
 Vue.use(Router)
 
@@ -51,9 +50,8 @@ export default new Router({
         {path: '/anli1',name: 'anli1',component: anli1},
         {path: '/countpage',name: 'countpage',component: countpage},
         {path: '/countpage2',name: 'countpage2',component: countpage2},
-        {path: '/daohang1',name: 'daohang1',component: daohang1},
-        {path: '/yingpin',name: 'yingpin',component: yingpin},
-        {path: '/yingpin1',name: 'yingpin1',component: yingpin1},
+        {path: '/countpage3',name: 'countpage3',component: countpage3},
+        {path: '/countpage4',name: 'countpage4',component: countpage4},
         {path: '*',name: 'Error', component: Error,}
       ]
     }

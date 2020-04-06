@@ -1,6 +1,6 @@
 <template>
   <div class="list1">
-    <h3>{{ $store.state.count }}-{{count}}</h3>
+    <h3>{{count}}</h3>
     <div class="headertab">
   <div class="tab">
      <a href="#1">基本信息</a>
@@ -80,7 +80,11 @@
     methods: {
        
     },
-    computed:mapState(['count']),
+    computed:{
+      count(){
+        return this.$store.state.count 
+      }
+    },
     store
   };
 </script>

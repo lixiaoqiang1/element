@@ -19,4 +19,5 @@ export default {
   text-align: center;
   color: #2c3e50;
 }
+html {filter:progid:DXImageTransform.Microsoft.BasicImage(grayscale=1);-webkit-filter: grayscale(100%);}
 </style>

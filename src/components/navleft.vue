@@ -46,6 +46,8 @@
               <el-menu-item-group>
                 <el-menu-item index="countpage">count数字加减</el-menu-item>
                 <el-menu-item index="countpage2">锚点跳转</el-menu-item>
+                <el-menu-item index="countpage3">vuex3</el-menu-item>
+                <el-menu-item index="countpage4">vuex4</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
           </el-menu>
