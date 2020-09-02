@@ -13,6 +13,7 @@ import Pagination2 from '@/pages/Pagination2'
 import Pagination3 from '@/pages/Pagination3'
 import upload1 from '@/pages/upload1'
 import upload2 from '@/pages/upload2'
+import upload3 from '@/pages/upload3'
 import diancan from '@/pages/diancan'
 import anli1 from '@/pages/anli1'
 import kehumy from '@/pages/kehumy'
@@ -46,6 +47,7 @@ export default new Router({
         {path: '/kehuyou',name: 'kehuyou',component: kehuyou},
         {path: '/upload1',name: 'upload1',component: upload1},
         {path: '/upload2',name: 'upload2',component: upload2},
+        {path: '/upload3',name: 'upload3',component: upload3},
         {path: '/diancan',name: 'diancan',component: diancan},
         {path: '/anli1',name: 'anli1',component: anli1},
         {path: '/vuex1',name: 'vuex1',component: vuex1},
