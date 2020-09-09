@@ -154,7 +154,8 @@ Vue.config.productionTip = false
 //引入Vuex
 import Vuex from 'vuex'
 Vue.use(Vuex)
-
+import VueCropper from 'vue-cropper'
+Vue.use(VueCropper)
 //引用axios
 import axios from 'axios'
 Vue.prototype.axios = axios
