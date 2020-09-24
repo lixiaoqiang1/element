@@ -1,68 +1,28 @@
 <template>
-    <div>
-        <el-form ref="form" :rules="rules" :model="form" label-width="100px">
-            <el-form-item label="手机号" prop="phone">
-                <el-input class="inp" v-model="form.phone" :maxlength="11" auto-complete="true"></el-input>
-            </el-form-item>
-        </el-form>
-       <el-button @click="sendMsg" type="primary" :disabled="isDisabled">{{buttonName}}</el-button>
-    </div>
+  <ve-histogram :data="chartData" :settings="chartSettings"></ve-histogram>
 </template>
+
 <script>
-export default {
-    data() {
-        // 此处自定义校验手机号码js逻辑
-        var phoneReg = /^[1][3,4,5,7,8][0-9]{9}$/
-        var validatePhone = (rule, value, callback) => {
-            if (!value) {
-                return callback(new Error('号码不能为空!!'))
-            }
-            setTimeout(() => {
-                if (!phoneReg.test(value)) {
-                callback(new Error('格式有误'))
-                } else {
-                callback()
-                }
-            }, 1000)
+  export default {
+    data () {
+      this.chartSettings = {
+        axisSite: { right: ['下单率'] },
+        yAxisType: ['KMB', 'percent'],
+        yAxisName: ['数值', '比率']
+      }
+      return {
+        chartData: {
+          columns: ['日期', '访问用户', '下单用户', '下单率'],
+          rows: [
+            { '日期': '1/1', '访问用户': 1393, '下单用户': 1093, '下单率': 0.32 },
+            { '日期': '1/2', '访问用户': 3530, '下单用户': 3230, '下单率': 0.26 },
+            { '日期': '1/3', '访问用户': 2923, '下单用户': 2623, '下单率': 0.76 },
+            { '日期': '1/4', '访问用户': 1723, '下单用户': 1423, '下单率': 0.49 },
+            { '日期': '1/5', '访问用户': 3792, '下单用户': 3492, '下单率': 0.323 },
+            { '日期': '1/6', '访问用户': 4593, '下单用户': 4293, '下单率': 0.78 }
+          ]
         }
-        return {
-            form: {
-                phone: '',
-            },
-            phone: '',
-            
-            buttonName: "发送短信",//倒计时
-            isDisabled: false,//倒计时
-            time: 10,//倒计时
-            // 校验规则
-            rules: {
-                phone: [
-                    {
-                        required: true, //是否必填
-                        validator: validatePhone,
-                        trigger: 'blur'  //何事件触发
-                    },
-                ]
-            }
-        }
-    },
-    
-    methods:{
-        //手机倒计时
-        sendMsg() {
-            let me = this;
-            me.isDisabled = true;
-            let interval = window.setInterval(function() {
-                me.buttonName = '（' + me.time + '秒）后重新发送';
-                --me.time;
-                if(me.time < 0) {
-                    me.buttonName = "重新发送";
-                    me.time = 10;
-                    me.isDisabled = false;
-                    window.clearInterval(interval);
-                }
-            }, 1000);
-        }
+      }
+    }
   }
-}
 </script>

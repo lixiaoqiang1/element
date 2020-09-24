@@ -12,9 +12,11 @@
   "dependencies": {
     "axios": "^0.18.0",
     "benz-amr-recorder": "^1.1.2",
+    "echarts": "^4.9.0",
     "element-ui": "^2.8.2",
     "hls.js": "^0.13.2",
     "mockjs": "^1.0.1-beta3",
+    "v-charts": "^1.19.0",
     "vue": "^2.5.2",
     "vue-aplayer": "^1.6.1",
     "vue-cropperjs": "^4.1.0",

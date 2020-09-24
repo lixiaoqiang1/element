@@ -3,6 +3,7 @@
 import Vue from 'vue'
 import App from './App'
 import router from './router'
+import VCharts from 'v-charts'
 
 //element主题色引入
 // import './theme/index.css'
@@ -159,7 +160,7 @@ Vue.use(VueCropper)
 //引用axios
 import axios from 'axios'
 Vue.prototype.axios = axios
-
+Vue.use(VCharts)
 //引用自建的mock文件
 require('./mock');
 
