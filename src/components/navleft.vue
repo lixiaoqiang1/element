@@ -9,6 +9,7 @@
       <el-row class="tac">
         <el-col>
           <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  @select="handleSelect">
+            <el-menu-item index="login"><span slot="title">login_cookie</span></el-menu-item>
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
             <el-menu-item index="daohang"><span slot="title">导航</span></el-menu-item>
             <el-menu-item index="daohang"><span slot="title">验证码</span></el-menu-item>

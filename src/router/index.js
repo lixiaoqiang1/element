@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
+import login from '@/pages/login'
 import index from '@/pages/index'
 import daohang from '@/pages/daohang'
 import isprops from '@/pages/isprops'
@@ -33,6 +34,7 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld,
       children:[
+        {path: '/login',name: 'login',component: login},
         {path: '/index',name: 'index',component: index},
         {path: '/daohang',name: 'daohang',component: daohang},
         {path: '/isprops',name: 'isprops',component: isprops},
