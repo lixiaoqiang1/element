@@ -54,7 +54,7 @@ ul,li{
     opacity: 0
     }
   
-  
+
 </style>
 <template>
     <div>
@@ -82,7 +82,7 @@ ul,li{
         </select>
         <hr>
         <transition name="fade">
-            <div v-if="show">显示还是隐藏</div>
+            <div v-if="show">显示还是隐藏1</div>
         </transition>
        
         <el-button @click="show=!show">show</el-button>
