@@ -24,6 +24,7 @@
                 <el-menu-item index="Pagination">分页1</el-menu-item>
                 <el-menu-item index="Pagination2">分页2</el-menu-item>
                 <el-menu-item index="Pagination3">分页3</el-menu-item>
+                <el-menu-item index="addexcel">addexcel</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="2">

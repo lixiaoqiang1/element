@@ -1,56 +1,59 @@
+<style scoped>
+table{
+  border-collapse:collapse;
+}
+table,th,td{
+  border:1px #ddd solid;
+}
+</style>
 <template>
   <div>
-    <ul>
-      <li v-for="(item,index) in array" :key="index">
-        <p>{{item.aa1}}</p>
-        <p>{{item.aa2}}</p>
-        <div v-for="(item2,index) in item.content" :key="index">
-          {{item2.sourcename}}
-        </div>
-      </li>
-    </ul>
+    <input v-model="val1" @input="change" />
+    <p>{{array}}</p>
+    <table>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
   </div>
 </template>
 
 <script>
   export default {
-    data() {
-      return {
-        array:''
-      };
+    data(){
+      return{
+        array:1,
+        val1:''
+      }
     },
-    mounted:function(){
-      let arr = [
-        {
-          aa1:'11',
-          aa2:'22',
-          content:[{
-          "sourcename": "ko",
-          "datadesc": "",
-          "sourcetime": "2020-03-27 17:13:15",
-          "realchatname": "wxid_73d1y9no18t722"
-          }, {
-          "sourcename": "ko",
-          "datadesc": "@峰 ",
-          "sourcetime": "2020-03-27 17:20:29",
-          "realchatname": "wxid_73d1y9no18t722"
-          }, {
-          "sourcename": "峰",
-          "datadesc": "稍等下",
-          "sourcetime": "2020-03-27 17:22:19",
-          "realchatname": "wxid_7u6a42up41to52"
-          }]
-        }
-      ]
-      this.array = arr
-    },
-    methods: {
-      handleRemove(file, fileList) {
-        console.log(file, fileList);
-      },
-      handlePictureCardPreview(file) {
-        this.dialogImageUrl = file.url;
-        this.dialogVisible = true;
+    methods:{
+      change(){
+        // let inputNum = 3;
+        // let arr = [];
+        // let l = 1;
+        // for(const i=0;i<inputNum;i++){
+        //   let flag = 0;
+        //   let str = '';
+        //   for(let j=l;j<1000;j++){
+        //     if(flag == inputNum){
+        //       l = j;
+        //       break;
+        //     }
+        //     str = str+','+j;
+        //     flag++
+        //   }
+        //   arr.push(subs)
+        // }
+        console.log(this.val1)
       }
     }
   }

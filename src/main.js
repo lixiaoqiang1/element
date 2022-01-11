@@ -163,6 +163,7 @@ Vue.prototype.axios = axios
 Vue.use(VCharts)
 //引用自建的mock文件
 require('./mock');
+Vue.prototype.$bus = new Vue()
 
 /* eslint-disable no-new */
 new Vue({

@@ -88,7 +88,7 @@ ul,li{
         <el-button @click="show=!show">show</el-button>
         <el-row type="flex" justify="center">
             <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
-                <el-form-item label="用户名" prop="name">
+                <el-form-item label="用户名" prop="name" :required="true">
                     <el-input v-model="user.name" autocomplete="off"></el-input>
                 </el-form-item>
                 <el-form-item label="密码" prop="pass">

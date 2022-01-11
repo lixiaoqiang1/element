@@ -1,6 +1,8 @@
 <template>
     <div>
-      <hello :msg-father="message"></hello>
+      <busceshi></busceshi>
+      <child :msg-father="message"></child>
+      <!-- <childs></childs> -->
       <el-button @click="btn1">btn1</el-button>
       <div>
         <ul>
@@ -13,10 +15,12 @@
   </div>
 </template>
 <script>
-import hello from '@/components/child'
+import child from '@/components/child'
+import busceshi from '@/components/busceshi'
+// import childs from '@/components/child2'
 export default {
     components:{
-      hello
+      child,busceshi
     },
     data(){
       return{
