@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import login from '@/pages/login'
 import index from '@/pages/index'
 import daohang from '@/pages/daohang'
+import daohanga from '@/pages/daohanga'
 import isprops from '@/pages/isprops'
 import isprops2 from '@/pages/isprops2'
 import table1 from '@/pages/table1'
@@ -16,6 +17,7 @@ import Pagination3 from '@/pages/Pagination3'
 import upload1 from '@/pages/upload1'
 import upload2 from '@/pages/upload2'
 import upload3 from '@/pages/upload3'
+import ismork from '@/pages/ismork'
 import diancan from '@/pages/diancan'
 import anli1 from '@/pages/anli1'
 import kehumy from '@/pages/kehumy'
@@ -25,6 +27,7 @@ import vuex3 from '@/pages/vuex3'
 import countpage2 from '@/pages/countpage2'
 import vuex4 from '@/pages/vuex4'
 import Error from '@/components/Error'
+import chargeCard from '@/pages/chargeCard'
 Vue.use(Router)
 
 export default new Router({
@@ -38,6 +41,7 @@ export default new Router({
         {path: '/login',name: 'login',component: login},
         {path: '/index',name: 'index',component: index},
         {path: '/daohang',name: 'daohang',component: daohang},
+        {path: '/daohanga',name: 'daohanga',component: daohanga},
         {path: '/isprops',name: 'isprops',component: isprops},
         {path: '/isprops2',name: 'isprops2',component: isprops2},
         {path: '/table1',name: 'table1',component: table1},
@@ -56,9 +60,13 @@ export default new Router({
         {path: '/anli1',name: 'anli1',component: anli1},
         {path: '/vuex1',name: 'vuex1',component: vuex1},
         {path: '/vuex3',name: 'vuex3',component: vuex3},
+        {path: '/chargeCard',name: 'chargeCard', component: chargeCard,},
         {path: '/vuex4',name: 'vuex4',component: vuex4},
         {path: '/countpage2',name: 'countpage2',component: countpage2},
-        {path: '*',name: 'Error', component: Error,}
+        {path: '/ismork',name: 'ismork',component: ismork},
+        {path: '*',name: 'Error', component: Error,},
+
+        
       ]
     }
   ]

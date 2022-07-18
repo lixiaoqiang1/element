@@ -44,18 +44,18 @@ export default {
         delGroup() {
 			var ids = this.sels.map(item => item.id).join()//获取所有选中行的id组成的字符串，以逗号分隔
 			console.log(ids);
-			// let that = this;
-			// that.axios.post('/api/data11', {
-			// 	params: {
-			// 	ID: ids
-			// 	}
-			// })
-			// .then(function (response) {
-			// 	console.log(response);
-			// })
-			// .catch(function (error) {
-			// 	console.log(error);
-			// });
+			let that = this;
+			that.axios.post('/api/data11', {
+				params: {
+				ID: ids
+				}
+			})
+			.then(function (response) {
+				console.log(response);
+			})
+			.catch(function (error) {
+				console.log(error);
+			});
 			
         },
         handleCurrentChange(row, event, column) {

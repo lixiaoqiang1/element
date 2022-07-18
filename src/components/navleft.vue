@@ -12,6 +12,8 @@
             <el-menu-item index="login"><span slot="title">login_cookie</span></el-menu-item>
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
             <el-menu-item index="daohang"><span slot="title">导航</span></el-menu-item>
+            <el-menu-item index="daohanga"><span slot="title">导航a</span></el-menu-item>
+            <el-menu-item index="ismork"><span slot="title">mork</span></el-menu-item>
             <el-menu-item index="daohang"><span slot="title">验证码</span></el-menu-item>
             <el-menu-item index="isprops"><span slot="title">props父向子传值1</span></el-menu-item>
             <el-menu-item index="isprops2"><span slot="title">props子向父传值2</span></el-menu-item>
@@ -53,6 +55,7 @@
                 <el-menu-item index="countpage2">锚点跳转</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
+            <el-menu-item index="chargeCard"><span slot="title">记账卡</span></el-menu-item>
           </el-menu>
         </el-col>
       </el-row>

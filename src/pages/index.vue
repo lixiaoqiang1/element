@@ -59,6 +59,8 @@ ul,li{
 <template>
     <div>
         <div>
+            <div class="loadingBox" ref="box" v-show="isLoading"></div>
+            <el-button @click="onclickjz">加载中</el-button>
             <el-button @click="maodian">锚点</el-button>
             {{aaa}}
             <el-button @click="aaa+=2">btn+</el-button>
@@ -84,7 +86,17 @@ ul,li{
         <transition name="fade">
             <div v-if="show">显示还是隐藏1</div>
         </transition>
-       
+       <el-date-picker
+        v-model="datepicker"
+        type="monthrange"
+        range-separator="至"
+        start-placeholder="开始月份"
+        end-placeholder="结束月份"
+        format="yyyy-MM"
+        value-format="yyyy-MM"
+        @change="onDateChange"
+        >
+        </el-date-picker>
         <el-button @click="show=!show">show</el-button>
         <el-row type="flex" justify="center">
             <el-form ref="loginForm" :model="user" :rules="rules" status-icon label-width="80px">
@@ -95,7 +107,7 @@ ul,li{
                     <el-input v-model="user.pass" type="password"></el-input>
                 </el-form-item>
                 <el-form-item>
-                    <el-button type="primary" icon="el-icon-upload" @click="login">登录</el-button>
+                    <el-button type="primary" icon="el-icon-upload" @click="login($event)">登录</el-button>
                 </el-form-item>
             </el-form>
         </el-row>
@@ -164,7 +176,9 @@ ul,li{
 export default {
     data(){
         return{
+            isLoading:false,
             aaa:1,
+            datepicker:"",
             che_active:[],
             radio_active:[],
             show:false,
@@ -198,10 +212,21 @@ export default {
         }
     },
     methods:{
+        //加载中
+        onclickjz(a){
+            // this.loading.close()
+            this.isLoading = true
+            this.loading = this.$loading({ target: this.$refs.box, text: '拼命加载中...', background: 'transparent' })
+        },
         bbb(a){
             alert(a)
         },
-        login () {
+        onDateChange(row){
+            console.log(row[0].split("-"))
+            console.log(row[1].split("-"))
+        },
+        login (event) {
+            console.log(document.getElementsByTagName('html')[0].innerHTML)
             this.$refs.loginForm.validate((valid) => {
                 if (valid) {
                     if (this.user.name === 'admin' && this.user.pass === '123') {

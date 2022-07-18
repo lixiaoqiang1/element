@@ -4,7 +4,8 @@ import Vue from 'vue'
 import App from './App'
 import router from './router'
 import VCharts from 'v-charts'
-
+import Vconsole from 'vconsole';
+new Vconsole();
 //element主题色引入
 // import './theme/index.css'
 //element组件引入
@@ -163,6 +164,7 @@ Vue.prototype.axios = axios
 Vue.use(VCharts)
 //引用自建的mock文件
 require('./mock');
+// require('./mock/index.js')
 Vue.prototype.$bus = new Vue()
 
 /* eslint-disable no-new */
