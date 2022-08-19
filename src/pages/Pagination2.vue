@@ -95,7 +95,7 @@
         data() {
           return {
                total:1000,//默认数据总数
-            pagesize:9,//每页的数据条数
+            pagesize:5,//每页的数据条数
             currentPage:1,//默认开始页面
                istag: true,
               input:"",
@@ -164,7 +164,7 @@
           download_num: '423.6'
         },
         {
-          appname: '4喵喵直播',
+          appname: '4喵喵直播222',
           apkname: '4bdkdl',
           type: '4视频直播',
           comp_name: '4广大科技公司',
@@ -173,7 +173,7 @@
           download_num: '423.6'
         },
         {
-          appname: '4喵喵直播',
+          appname: '4喵喵直播222',
           apkname: '4bdkdl',
           type: '4视频直播',
           comp_name: '4广大科技公司',
@@ -298,6 +298,7 @@
          this.total=this.tableData.length;
       },
      current_change:function(currentPage){
+      console.log(currentPage)
         this.currentPage = currentPage;
       }
     },
