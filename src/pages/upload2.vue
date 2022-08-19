@@ -18,7 +18,6 @@
   </div>
 </template>
 <script>
-import * as imageConversion from 'image-conversion'
   export default {
     data() {
       return {
