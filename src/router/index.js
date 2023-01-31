@@ -10,6 +10,7 @@ import isprops2 from '@/pages/isprops2'
 import table1 from '@/pages/table1'
 import table2 from '@/pages/table2'
 import table3 from '@/pages/table3'
+import table4 from '@/pages/table4'
 import addexcel from '@/pages/addexcel'
 import Pagination from '@/pages/Pagination'
 import Pagination2 from '@/pages/Pagination2'
@@ -47,6 +48,7 @@ export default new Router({
         {path: '/table1',name: 'table1',component: table1},
         {path: '/table2',name: 'table2',component: table2},
         {path: '/table3',name: 'table3',component: table3},
+        {path: '/table4',name: 'table4',component: table4},
         {path: '/addexcel',name: 'table3',component: addexcel},
         {path: '/Pagination',name: 'Pagination',component: Pagination},
         {path: '/Pagination2',name: 'Pagination2',component: Pagination2},

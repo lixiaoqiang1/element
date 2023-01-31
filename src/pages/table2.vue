@@ -7,8 +7,8 @@
           <el-breadcrumb-item><i class="el-icon-date"></i> 数据管理</el-breadcrumb-item>
           <el-breadcrumb-item>用户列表</el-breadcrumb-item>
       </el-breadcrumb>
-      <div class="cantainer">
-        <el-table style="width: 100%;"  :data="userList.slice((page_index-1)*page_size,page_index*page_size)">
+      <div>
+        <el-table style="width: 100% !important;"  :data="userList.slice((page_index-1)*page_size,page_index*page_size)">
           <el-table-column type="index" width="50"></el-table-column>
           <el-table-column label="日期" prop="date" width="180"></el-table-column>
           <el-table-column label="用户姓名" prop="name" width="180"></el-table-column>
