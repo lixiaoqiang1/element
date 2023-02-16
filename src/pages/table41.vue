@@ -1,44 +1,60 @@
-
 <style scoped>
+#pdfDom{
+  background: #eee;
+}
 .box-in{
   height: 300px;overflow: auto;
+}
+.box-in-list{
+  padding: 50px;
+}
+.group-list{
+  padding: 30px 0;
+}
+.box-in-list>>>.el-table th div,.box-in-list>>>.el-table td div{
+  text-align: center;
 }
 </style>
 <template>
   <div>
     <div class="deit">
       <div class="crumbs">
-        <!-- <button @click="handleUserList">查询</button> -->
-        <!-- <el-breadcrumb separator="/">
-            <el-breadcrumb-item><i class="el-icon-date"></i> 数据管理</el-breadcrumb-item>
-            <el-breadcrumb-item>用户列表</el-breadcrumb-item>
-        </el-breadcrumb> -->
+        <el-button type="text" @click="dialogTableVisible = true">打开嵌套表格的 Dialog</el-button>
 
-        <!-- <el-button @click="getPdf()">下载PDF</el-button> -->
-        <button @click="handleExport">导出11</button>
-
-        <div ref="pdf">
-          <div class="box-in">
-            <el-table :data="userList" style="width:100%">
-              <el-table-column type="index" width="50"></el-table-column>
-              <el-table-column label="日期" prop="date"></el-table-column>
-              <el-table-column label="用户姓名" prop="name"></el-table-column>
-              <el-table-column label="邮箱" prop="email"></el-table-column>
-              <el-table-column label="地址" prop="address"></el-table-column>    
-            </el-table>
-          </div>
-          
-        </div>
+        
+        
+        
       </div>
     </div>
+    <el-dialog title="内容预览" :visible.sync="dialogTableVisible" width="1200px">
+      <div class="box-in">
+          <div id="pdfDom">
+            <div class="box-in-list">
+              <el-table :data="userList" header-align="center">
+                <el-table-column type="index" width="100" center></el-table-column>
+                <el-table-column label="日期" prop="date"></el-table-column>
+                <el-table-column label="用户姓名" prop="name"></el-table-column>
+                <el-table-column label="邮箱" prop="email"></el-table-column>
+                <el-table-column label="地址" prop="address"></el-table-column>    
+              </el-table>
+            </div>
+            
+          </div>
+          <div class="group-list">
+            <el-button class="isbtn" @click="getPdf()">下载PDF</el-button>
+          </div>
+        </div>
+    </el-dialog>
+    
   </div>
   </template>
   
   <script>
-    import {downloadPDF} from "@/util/pdf.js"
+  
     export default {
       data() {
         return {
+          dialogTableVisible:false,
           userList: [
           {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
             {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
@@ -120,28 +136,9 @@
             {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
             {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
             {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
-            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"},
+            {"date":"1998","name":"王小虎","email":"3610@qq.com","address":"上海市"}
           ],
-          isshow:false,
+          
           htmlTitle: 'pdf文件名'
         }
       },
@@ -152,10 +149,7 @@
         
       },
       methods: {
-        handleExport(){
-          sessionStorage.setItem('htmlTitletitle','文件名文件名1')
-          downloadPDF(this.$refs.pdf)
-        }
+        
       }
     }
   </script>

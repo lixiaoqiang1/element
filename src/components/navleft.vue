@@ -23,7 +23,8 @@
                 <el-menu-item index="table1">table1</el-menu-item>
                 <el-menu-item index="table2">table2</el-menu-item>
                 <el-menu-item index="table3">table3</el-menu-item>
-                <el-menu-item index="table4">table转pdf</el-menu-item>
+                <el-menu-item index="table4">table转pdf4</el-menu-item>
+                <el-menu-item index="table41">table转pdf41</el-menu-item>
                 <el-menu-item index="Pagination">分页1</el-menu-item>
                 <el-menu-item index="Pagination2">分页2</el-menu-item>
                 <el-menu-item index="Pagination3">分页3</el-menu-item>

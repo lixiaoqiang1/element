@@ -167,6 +167,13 @@ require('./mock');
 // require('./mock/index.js')
 Vue.prototype.$bus = new Vue()
 
+// main.js
+// main.js
+import htmlToPdf from '@/util/htmlToPdf'
+Vue.use(htmlToPdf)
+
+
+
 /* eslint-disable no-new */
 new Vue({
   el: '#app',
