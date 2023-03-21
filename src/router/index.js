@@ -19,6 +19,7 @@ import Pagination3 from '@/pages/Pagination3'
 import upload1 from '@/pages/upload1'
 import upload2 from '@/pages/upload2'
 import upload3 from '@/pages/upload3'
+import upload4 from '@/pages/upload4'
 import ismork from '@/pages/ismork'
 import diancan from '@/pages/diancan'
 import anli1 from '@/pages/anli1'
@@ -60,6 +61,7 @@ export default new Router({
         {path: '/upload1',name: 'upload1',component: upload1},
         {path: '/upload2',name: 'upload2',component: upload2},
         {path: '/upload3',name: 'upload3',component: upload3},
+        {path: '/upload4',name: 'upload4',component: upload4},
         {path: '/diancan',name: 'diancan',component: diancan},
         {path: '/anli1',name: 'anli1',component: anli1},
         {path: '/vuex1',name: 'vuex1',component: vuex1},

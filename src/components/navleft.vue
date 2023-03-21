@@ -37,6 +37,7 @@
                 <el-menu-item index="upload1">文件上传</el-menu-item>
                 <el-menu-item index="upload2">文件上传2</el-menu-item>
                 <el-menu-item index="upload3">文件上传3</el-menu-item>
+                <el-menu-item index="upload4">文件上传4</el-menu-item>
               </el-menu-item-group>
             </el-submenu>
             <el-submenu index="3">
