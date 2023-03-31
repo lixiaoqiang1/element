@@ -48,6 +48,7 @@
       }
     },
       submitUpload() {
+        console.log(this.fileList)
         let {uploadFiles} = this.$refs.upload   
         // this.datalist = uploadFiles
         // const formdata = new FormData()

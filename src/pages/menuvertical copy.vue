@@ -1,5 +1,6 @@
 <template>
   <div class="app">
+    
     <!-- 
               :default-active 一进页面默认显示的页面
               unique-opened 保持一个子菜单的打开
@@ -7,48 +8,47 @@
               text-color 菜单文字的颜色
               active-text-color 菜单激活后文字的颜色
              -->
-    <!-- :default-active="$route.path" -->
+             <!-- :default-active="$route.path" -->
     <el-menu
-      mode="horizontal"
+    mode="horizontal"
       :default-active="defaultactive"
       class="el-menu-vertical-demo"
-      unique-opened
+      unique-opened 
       router
       background-color="#2a3f54"
-      text-color="#999"
-      active-text-color="#fff"
+      text-color="#fff"
+      active-text-color="orangered"
       @select="handleSelect"
     >
       <template v-for="item in menuData">
-        <el-menu-item :index="item.path" v-if="item.children == undefined">
+        <el-menu-item :index="item.path" :key="item.path" v-if="item.children == undefined">
           <template slot="title">
             <i :class="item.icon"></i>
             <span>{{ item.title }}</span>
           </template>
-        </el-menu-item>
-        <el-submenu :index="item.path" v-if="item.children != undefined">
+        </el-menu-item> 
+        <el-submenu :index="item.path" :key="item.path" v-if="item.children != undefined">
           <template slot="title">
             <i :class="item.icon"></i>
             <span slot="title">{{ item.title }}</span>
           </template>
           <template v-for="item2 in item.children">
-            <el-menu-item
-              :index="item2.path"
-              v-if="item2.children == undefined"
-              >{{ item2.title }}</el-menu-item
-            >
-            <el-submenu :index="item2.path" v-if="item2.children != undefined">
+            <el-menu-item :index="item2.path" :key="item2.path" v-if="item2.children == undefined" >
+              {{ item2.title }}
+            </el-menu-item>
+            <el-submenu :index="item2.path" :key="item2.path" v-if="item2.children != undefined">
               <template slot="title">
                 <span slot="title">{{ item2.title }}</span>
               </template>
               <template v-for="item3 in item2.children">
-                <el-menu-item :index="item3.path">{{
-                  item3.title
-                }}</el-menu-item>
+                <el-menu-item :index="item3.path" :key="item3.path">
+                {{ item3.title }}
+              </el-menu-item>
               </template>
             </el-submenu>
           </template>
         </el-submenu>
+        <router-view></router-view>
       </template>
     </el-menu>
   </div>
@@ -58,12 +58,12 @@ export default {
   components: {},
   data() {
     return {
-      defaultactive: "",
+      defaultactive:"",
       menuData: [
         {
           path: "/",
           icon: "el-icon-menu",
-          title: "首页",
+          title: "导航",
           id: 1
           // children:[
           //   {
@@ -80,7 +80,7 @@ export default {
           children: [
             {
               path: "/login",
-              title: "登录",
+              title: "导航二选项1",
               id: 2 - 1
             },
             {
@@ -129,20 +129,14 @@ export default {
     };
   },
   components: {},
-  mounted() {
-    this.defaultactive = "/login";
-    this.$router.push({
-      path: "/login",
-      query: {
-        id: "123"
-      }
-    });
+  mounted(){
+    this.defaultactive = '/login'
   },
 
   methods: {
-    handleSelect(row) {
-      console.log(row);
-      console.log(this.defaultactive);
+    handleSelect(row){
+      console.log(row)
+      console.log(this.defaultactive)
     }
   }
 };

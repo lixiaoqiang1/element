@@ -49,6 +49,7 @@
         console.log('111111111')
         const upload = this.$refs.upload.uploadFiles
         this.fileList = this.$refs.upload.uploadFiles
+        console.log('222')
         console.log(upload)
         // for(const i in upload){
         //   console.log(this.compressImg(upload[i].raw))
@@ -121,19 +122,23 @@
                 // 回调函数返回file的值    
                 console.log(base64)
                 // callback(base64);
+                // if(sessionStorage.getItem('setimg')!=undefined){
+                //   var setimg = JSON.parse(sessionStorage.getItem('setimg'))
+                // }
+                // isarr.push(base64)
+                sessionStorage.setItem('setimge',JSON.stringify(base64))
             };  
         };
       },
       onclickbtn(){
-        console.log('1212')
-        console.log(this.fileList)
+        console.log('1212',this.fileList)
         const upload = this.fileList
         for(const i in upload){
           console.log(this.compressImg(upload[i].raw))
           upload[i].raw = this.compressImg(upload[i].raw)
         }
         // upload.raw = this.dataURLtoFile(upload.raw)
-        console.log(upload)
+        console.log('upload',upload)
       }
     }
   }

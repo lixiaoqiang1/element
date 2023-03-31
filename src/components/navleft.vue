@@ -9,14 +9,21 @@
       <el-row class="tac">
         <el-col>
           <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  @select="handleSelect">
+            <el-menu-item index="menuvertical"><span slot="title">导航</span></el-menu-item>
             <el-menu-item index="login"><span slot="title">login_cookie</span></el-menu-item>
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
-            <el-menu-item index="daohang"><span slot="title">导航</span></el-menu-item>
-            <el-menu-item index="daohanga"><span slot="title">导航a</span></el-menu-item>
+            
             <el-menu-item index="ismork"><span slot="title">mork</span></el-menu-item>
-            <el-menu-item index="daohang"><span slot="title">验证码</span></el-menu-item>
             <el-menu-item index="isprops"><span slot="title">props父向子传值1</span></el-menu-item>
-            <el-menu-item index="isprops2"><span slot="title">props子向父传值2</span></el-menu-item>
+            
+            <el-submenu index="0">
+              <template slot="title"><span>柱状图</span></template>
+              <el-menu-item-group>
+                <el-menu-item index="daohang">导航</el-menu-item>
+                <el-menu-item index="daohanga">echarts柱状图</el-menu-item>
+                <el-menu-item index="debouce">debouce防抖</el-menu-item>
+              </el-menu-item-group>
+            </el-submenu>
             <el-submenu index="1">
               <template slot="title"><span>统计模块</span></template>
               <el-menu-item-group>

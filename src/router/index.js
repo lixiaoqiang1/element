@@ -6,7 +6,7 @@ import index from '@/pages/index'
 import daohang from '@/pages/daohang'
 import daohanga from '@/pages/daohanga'
 import isprops from '@/pages/isprops'
-import isprops2 from '@/pages/isprops2'
+import menuvertical from '@/pages/menuvertical'
 import table1 from '@/pages/table1'
 import table2 from '@/pages/table2'
 import table3 from '@/pages/table3'
@@ -31,6 +31,7 @@ import countpage2 from '@/pages/countpage2'
 import vuex4 from '@/pages/vuex4'
 import Error from '@/components/Error'
 import chargeCard from '@/pages/chargeCard'
+import debouce from '@/pages/debouce'
 Vue.use(Router)
 
 export default new Router({
@@ -41,12 +42,15 @@ export default new Router({
       name: 'HelloWorld',
       component: HelloWorld,
       children:[
+        {path: '/daohang',name: 'daohang',component: daohang},
+        {path: '/',name: 'index',component: index},
+
         {path: '/login',name: 'login',component: login},
         {path: '/index',name: 'index',component: index},
-        {path: '/daohang',name: 'daohang',component: daohang},
+        
         {path: '/daohanga',name: 'daohanga',component: daohanga},
         {path: '/isprops',name: 'isprops',component: isprops},
-        {path: '/isprops2',name: 'isprops2',component: isprops2},
+        {path: '/menuvertical',name: 'menuvertical',component: menuvertical},
         {path: '/table1',name: 'table1',component: table1},
         {path: '/table2',name: 'table2',component: table2},
         {path: '/table3',name: 'table3',component: table3},
@@ -69,6 +73,7 @@ export default new Router({
         {path: '/chargeCard',name: 'chargeCard', component: chargeCard,},
         {path: '/vuex4',name: 'vuex4',component: vuex4},
         {path: '/countpage2',name: 'countpage2',component: countpage2},
+        {path: '/debouce',name: 'debouce',component: debouce},
         {path: '/ismork',name: 'ismork',component: ismork},
         {path: '*',name: 'Error', component: Error,},
 

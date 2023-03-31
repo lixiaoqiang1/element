@@ -22,13 +22,13 @@
       <template v-for="item in menuData">
         <el-menu-item :index="item.path" v-if="item.children == undefined">
           <template slot="title">
-            <i :class="item.icon"></i>
+            <!-- <i :class="item.icon"></i> -->
             <span>{{ item.title }}</span>
           </template>
         </el-menu-item>
         <el-submenu :index="item.path" v-if="item.children != undefined">
           <template slot="title">
-            <i :class="item.icon"></i>
+            <!-- <i :class="item.icon"></i> -->
             <span slot="title">{{ item.title }}</span>
           </template>
           <template v-for="item2 in item.children">
@@ -130,13 +130,13 @@ export default {
   },
   components: {},
   mounted() {
-    this.defaultactive = "/login";
-    this.$router.push({
-      path: "/login",
-      query: {
-        id: "123"
-      }
-    });
+    // this.defaultactive = "/login";
+    // this.$router.push({
+    //   path: "/login",
+    //   query: {
+    //     id: "123"
+    //   }
+    // });
   },
 
   methods: {

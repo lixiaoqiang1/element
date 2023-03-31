@@ -39,6 +39,7 @@
 <template>
   <div id="isbody">
     <navtop class="navtop"></navtop>
+    <navbread></navbread>
     <navleft class="navleft"></navleft>
     <router-view></router-view>
   </div>
@@ -46,9 +47,10 @@
 
 <script>
 import navtop from '@/components/navtop'
+import navbread from '@/components/breadcrumb'
 import navleft from '@/components/navleft'
 export default {
-  components:{navleft,navtop}
+  components:{navleft,navtop,navbread}
 }
 </script>
 
