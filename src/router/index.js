@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
 import login from '@/pages/login'
 import index from '@/pages/index'
+import maodian from '@/pages/maodian'
 import daohang from '@/pages/daohang'
 import daohanga from '@/pages/daohanga'
 import isprops from '@/pages/isprops'
@@ -47,6 +48,7 @@ export default new Router({
 
         {path: '/login',name: 'login',component: login},
         {path: '/index',name: 'index',component: index},
+        {path: '/maodian',name: 'maodian',component: maodian},
         
         {path: '/daohanga',name: 'daohanga',component: daohanga},
         {path: '/isprops',name: 'isprops',component: isprops},

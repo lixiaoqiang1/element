@@ -58,6 +58,7 @@ ul,li{
 </style>
 <template>
     <div>
+        
         <div>
             <div class="loadingBox" ref="box" v-show="isLoading"></div>
             <el-button @click="onclickjz">加载中</el-button>
@@ -68,6 +69,7 @@ ul,li{
             <el-button @click="bbb('Form cannot be submitted yet.', $event)">btn2</el-button>
         </div>
         <hr>
+        <el-skeleton :rows="6" />
         <label><input type="checkbox" id="aaa" value="aaa" v-model="che_active">aaa</label>
         <label><input type="checkbox" id="bbb" value="bbb" v-model="che_active">bbb</label>
         <label><input type="checkbox" id="ccc" value="ccc" v-model="che_active">ccc</label>

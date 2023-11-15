@@ -12,6 +12,7 @@
             <el-menu-item index="menuvertical"><span slot="title">导航</span></el-menu-item>
             <el-menu-item index="login"><span slot="title">login_cookie</span></el-menu-item>
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
+            <el-menu-item index="maodian"><span slot="title">锚点</span></el-menu-item>
             
             <el-menu-item index="ismork"><span slot="title">mork</span></el-menu-item>
             <el-menu-item index="isprops"><span slot="title">props父向子传值1</span></el-menu-item>

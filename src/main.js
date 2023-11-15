@@ -76,7 +76,9 @@ import {
   Loading,
   MessageBox,
   Message,
-  Notification
+  Notification,
+  Skeleton,
+  SkeletonItem,
 } from 'element-ui';
 
 //element组件引入
@@ -143,6 +145,8 @@ Vue.use(Header);
 Vue.use(Aside);
 Vue.use(Main);
 Vue.use(Footer);
+Vue.use(Skeleton);
+Vue.use(SkeletonItem);
 Vue.use(Loading.directive);
 Vue.prototype.$loading = Loading.service;
 Vue.prototype.$msgbox = MessageBox;
