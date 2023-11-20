@@ -10,6 +10,7 @@
         <el-col>
           <el-menu default-active="2" class="el-menu-vertical-demo" @open="handleOpen" @close="handleClose"  @select="handleSelect">
             <el-menu-item index="menuvertical"><span slot="title">导航</span></el-menu-item>
+            <el-menu-item index="daohang2"><span slot="title">导航2</span></el-menu-item>
             <el-menu-item index="login"><span slot="title">login_cookie</span></el-menu-item>
             <el-menu-item index="index"><span slot="title">首页</span></el-menu-item>
             <el-menu-item index="maodian"><span slot="title">锚点</span></el-menu-item>

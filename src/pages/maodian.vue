@@ -1,7 +1,6 @@
 <template>
   <div>
     <el-menu
-      mode="horizontal"
       background-color="#545c64"
       text-color="#fff"
       active-text-color="#ffd04b"
@@ -22,13 +21,13 @@ export default {
   },
   data() {
     return {
-      activeIndex: "aa",
+      activeIndex: 'aa',
       menuData: [
         {
           //一级
           entity: {
             id: 0,
-            title: "aa",
+            name: "aa",
             icon: "el-icon-message",
             alias: "一级菜单"
           }
@@ -37,16 +36,16 @@ export default {
           //一级
           entity: {
             id: 1,
-            title: "systemManage",
+            name: "systemManage",
             icon: "el-icon-message",
             alias: "两级菜单"
           },
           //二级
-          children: [
+          childs: [
             {
               entity: {
                 id: 3,
-                title: "authManage",
+                name: "authManage",
                 icon: "el-icon-loading",
                 alias: "权限管理",
                 value: { path: "/hello" }
@@ -55,7 +54,7 @@ export default {
             {
               entity: {
                 id: 4,
-                title: "roleManage",
+                name: "roleManage",
                 icon: "el-icon-bell",
                 alias: "角色管理",
                 value: "/system/role"
@@ -64,7 +63,7 @@ export default {
             {
               entity: {
                 id: 2,
-                title: "menuManage",
+                name: "menuManage",
                 icon: "el-icon-edit",
                 alias: "菜单管理",
                 value: "/system/menu"
@@ -73,7 +72,7 @@ export default {
             {
               entity: {
                 id: 5,
-                title: "groupManage",
+                name: "groupManage",
                 icon: "el-icon-mobile-phone\r\n",
                 alias: "分组管理",
                 value: "/system/group"
@@ -85,26 +84,26 @@ export default {
           //一级
           entity: {
             id: 6,
-            title: "userManage",
+            name: "userManage",
             icon: "el-icon-news",
             alias: "三级菜单"
           },
           //二级
-          children: [
+          childs: [
             {
               entity: {
                 id: 7,
-                title: "accountManage",
+                name: "accountManage",
                 icon: "el-icon-phone-outline\r\n",
                 alias: "帐号管理",
                 value: ""
               },
               //三级
-              children: [
+              childs: [
                 {
                   entity: {
                     id: 14,
-                    title: "emailManage",
+                    name: "emailManage",
                     icon: "el-icon-sold-out\r\n",
                     alias: "邮箱管理",
                     value: "/content/email"
@@ -113,7 +112,7 @@ export default {
                 {
                   entity: {
                     id: 13,
-                    title: "passManage",
+                    name: "passManage",
                     icon: "el-icon-service\r\n",
                     alias: "密码管理",
                     value: "/content/pass"
@@ -124,7 +123,7 @@ export default {
             {
               entity: {
                 id: 8,
-                title: "integralManage",
+                name: "integralManage",
                 icon: "el-icon-picture",
                 alias: "积分管理",
 
@@ -138,34 +137,34 @@ export default {
           entity: {
             id: 40,
 
-            title: "contentManage",
+            name: "contentManage",
             icon: "el-icon-rank",
             alias: "四级菜单"
           },
           //er级
-          children: [
+          childs: [
             {
               entity: {
                 id: 41,
-                title: "classifyManage2",
+                name: "classifyManage2",
                 icon: "el-icon-printer",
                 alias: "分类管理"
               },
               //三级
-              children: [
+              childs: [
                 {
                   entity: {
                     id: 42,
-                    title: "classifyManage3",
+                    name: "classifyManage3",
                     icon: "el-icon-printer",
                     alias: "分类管理"
                   },
                   //四级
-                  children: [
+                  childs: [
                     {
                       entity: {
                         id: 43,
-                        title: "classifyManage4",
+                        name: "classifyManage4",
                         icon: "el-icon-printer",
                         alias: "分类管理",
                         value: "/content/classify"
@@ -183,4 +182,6 @@ export default {
 };
 </script>
 
-<style></style>
+<style>
+</style>
+

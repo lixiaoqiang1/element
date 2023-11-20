@@ -5,6 +5,7 @@ import login from '@/pages/login'
 import index from '@/pages/index'
 import maodian from '@/pages/maodian'
 import daohang from '@/pages/daohang'
+import daohang2 from '@/pages/daohang2'
 import daohanga from '@/pages/daohanga'
 import isprops from '@/pages/isprops'
 import menuvertical from '@/pages/menuvertical'
@@ -44,6 +45,7 @@ export default new Router({
       component: HelloWorld,
       children:[
         {path: '/daohang',name: 'daohang',component: daohang},
+        {path: '/daohang2',name: 'daohang2',component: daohang2},
         {path: '/',name: 'index',component: index},
 
         {path: '/login',name: 'login',component: login},
